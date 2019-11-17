@@ -137,8 +137,13 @@ body {
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.5); }
 
 .homes {
-  background-color: #101d2c;
-  grid-column: center-start / center-end; }
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem;
+  margin: 15rem 0; }
+  .homes .home {
+    background-color: #f9f7f6; }
 
 .gallery {
   background-color: #54483A;
