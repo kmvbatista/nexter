@@ -8,6 +8,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%; }
+  @media only screen and (max-width: 75rem) {
+    html {
+      font-size: 50%; } }
 
 body {
   font-family: "Nunito", sans-serif;
@@ -22,6 +25,10 @@ body {
   .container > * {
     padding: 4rem;
     font-size: 3rem; }
+  @media only screen and (max-width: 60rem) {
+    .container {
+      grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+      grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
@@ -74,14 +81,21 @@ body {
   grid-column: sidebar-start / sidebar-end;
   display: flex;
   justify-content: center;
-  align-items: flex-start; }
+  align-items: flex-start;
+  height: 100%; }
+  @media only screen and (max-width: 60rem) {
+    .sidebar {
+      grid-column: 1 / -1;
+      grid-row: 1 / 2;
+      justify-content: flex-end; } }
 
 .nav-btn {
   border: none;
   border-radius: 0;
   background-color: white;
   height: 2px;
-  width: 4.5rem; }
+  width: 4.5rem;
+  display: block; }
   .nav-btn::after, .nav-btn::before {
     background-color: white;
     height: 2px;
