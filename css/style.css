@@ -20,15 +20,18 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+  grid-template-rows: 100vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
   .container > * {
     padding: 4rem;
     font-size: 3rem; }
   @media only screen and (max-width: 60rem) {
     .container {
-      grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+      grid-template-rows: 8rem calc(100vh - 8rem) min-content 40vw repeat(3, min-content);
       grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; } }
+  @media only screen and (max-width: 50rem) {
+    .container {
+      grid-template-rows: 8rem calc(100vh - 8rem) min-content min-content 40vw repeat(3, min-content); } }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
@@ -118,6 +121,9 @@ body {
   padding-top: 4rem;
   justify-content: center;
   row-gap: 1.5rem; }
+  @media only screen and (max-width: 50rem) {
+    .header {
+      grid-column: full-start / full-end; } }
   .header__logo {
     height: 3rem;
     justify-self: center; }
@@ -155,12 +161,19 @@ body {
   align-content: center;
   row-gap: 2rem;
   justify-items: center; }
+  @media only screen and (max-width: 50rem) {
+    .realtors {
+      grid-column: full-start / full-end; } }
   .realtors__list {
     display: grid;
     grid-template-columns: min-content max-content;
     column-gap: 2rem;
     row-gap: 5vh;
     align-items: center; }
+    @media only screen and (max-width: 50rem) {
+      .realtors__list {
+        grid-template-columns: repeat(3, min-content max-content);
+        justify-content: space-around; } }
   .realtors__img {
     width: 7rem;
     border-radius: 50%;
@@ -170,6 +183,12 @@ body {
     color: #f9f7f6;
     margin-top: -3px;
     font-size: 1rem; }
+    @media only screen and (max-width: 50rem) {
+      .realtors__sold {
+        margin-right: 2rem; } }
+    @media only screen and (max-width: 600px) {
+      .realtors__sold {
+        margin-right: 0; } }
 
 .features {
   margin: 15rem 0;
